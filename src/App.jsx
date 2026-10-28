@@ -53,6 +53,12 @@ export default function App() {
           Prices are placeholders from the backend: one series per company, fetched once and replayed every second.
         </p>
 
+        {/* Big and loud on purpose: tells staging and prod apart at a glance */}
+        <div className="build-tag mono" aria-label={`Dashboard build ${version}`}>
+          <span className="build-label">build</span>
+          <span className="build-version">{version}</span>
+        </div>
+
         <section className="grid">
           {COMPANIES.map((slug) => (
             <StockTable key={slug} slug={slug} />
